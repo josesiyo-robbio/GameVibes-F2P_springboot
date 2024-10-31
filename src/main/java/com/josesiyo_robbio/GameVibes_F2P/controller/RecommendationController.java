@@ -28,6 +28,8 @@ public class RecommendationController {
         // Llama a la API de FreeToGame
         String response = restTemplate.getForObject(url, String.class);
 
+
+
         return response; // Retorna la respuesta de la API
     }
 }
