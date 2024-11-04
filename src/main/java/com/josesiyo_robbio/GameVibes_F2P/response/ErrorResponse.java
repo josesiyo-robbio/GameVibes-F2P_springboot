@@ -1,17 +1,23 @@
 package com.josesiyo_robbio.GameVibes_F2P.response;
 
-public class ErrorResponse {
+
+
+public class ErrorResponse
+{
     private String message;
 
-    public ErrorResponse(String message) {
+    public ErrorResponse(String message)
+    {
         this.message = message;
     }
 
-    public String getMessage() {
+    public String getMessage()
+    {
         return message;
     }
 
-    public void setMessage(String message) {
+    public void setMessage(String message)
+    {
         this.message = message;
     }
 }

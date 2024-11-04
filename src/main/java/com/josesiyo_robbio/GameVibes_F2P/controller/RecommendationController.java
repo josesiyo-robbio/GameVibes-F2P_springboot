@@ -13,13 +13,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 @RestController
 @RequestMapping("/api/recommendations")
-public class RecommendationController {
+public class RecommendationController
+{
 
     @Autowired
     private GameRecommendationService gameRecommendationService;
@@ -28,21 +30,23 @@ public class RecommendationController {
     private RestTemplate restTemplate;
 
     @PostMapping
-    public ResponseEntity<GameRecommendationResponse> getGameRecommendations(@RequestBody RecommendationRequest recommendationRequest) {
+    public ResponseEntity<GameRecommendationResponse> getGameRecommendations(@RequestBody RecommendationRequest recommendationRequest)
+    {
         String mood = recommendationRequest.getMood();
         String hour = recommendationRequest.getHour();
 
         String recommendationTag = gameRecommendationService.getRecommendedTag(mood, hour);
         String url = String.format("https://www.freetogame.com/api/filter?tag=%s&platform=pc", recommendationTag);
 
-        // Realizar la solicitud y manejar posibles errores
         String response = restTemplate.getForObject(url, String.class);
-        if (response == null || response.isEmpty()) {
+        if (response == null || response.isEmpty())
+        {
             throw new ResourceNotFoundException("No games found for the specified tag.");
         }
 
         JsonArray gamesArray = JsonParser.parseString(response).getAsJsonArray();
-        if (gamesArray.size() == 0) {
+        if (gamesArray.size() == 0)
+        {
             throw new ResourceNotFoundException("No games found for the specified mood and hour.");
         }
 
