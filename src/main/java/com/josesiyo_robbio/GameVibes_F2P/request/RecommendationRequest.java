@@ -1,11 +1,11 @@
-package com.josesiyo_robbio.GameVibes_F2P.dto;
+package com.josesiyo_robbio.GameVibes_F2P.request;
 
-public class RecommendationDTO {
+public class RecommendationRequest {
     private String mood;
     private String hour;
 
     // Constructor
-    public RecommendationDTO(String mood, String hour) {
+    public RecommendationRequest(String mood, String hour) {
         this.mood = mood;
         this.hour = hour;
     }

@@ -1,12 +1,12 @@
-package com.josesiyo_robbio.GameVibes_F2P.dto;
+package com.josesiyo_robbio.GameVibes_F2P.request;
 
-public class GameInfo {
+public class GameInfoRequest {
     private String title;
     private String shortDescription;
     private String genre;
 
     // Constructor, getters y setters
-    public GameInfo(String title, String shortDescription, String genre) {
+    public GameInfoRequest(String title, String shortDescription, String genre) {
         this.title = title;
         this.shortDescription = shortDescription;
         this.genre = genre;
