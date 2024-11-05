@@ -22,11 +22,13 @@ public class GameRecommendationService
     private List<Mood> moodList;
     private Map<String, List<String>> hourTags;
 
+
     @Autowired
     public GameRecommendationService(ResourceLoader resourceLoader)
     {
         this.resourceLoader = resourceLoader;
     }
+
 
     @PostConstruct
     private void init()
@@ -88,4 +90,5 @@ public class GameRecommendationService
         Random random = new Random();
         return list.get(random.nextInt(list.size()));
     }
+
 }

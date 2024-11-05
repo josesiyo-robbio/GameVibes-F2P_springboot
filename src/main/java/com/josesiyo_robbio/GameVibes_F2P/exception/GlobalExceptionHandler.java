@@ -11,7 +11,6 @@ import com.josesiyo_robbio.GameVibes_F2P.response.ErrorResponse;
 @ControllerAdvice
 public class GlobalExceptionHandler
 {
-
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleResourceNotFound(ResourceNotFoundException ex)
     {
@@ -26,4 +25,5 @@ public class GlobalExceptionHandler
         ErrorResponse errorResponse = new ErrorResponse("An unexpected error occurred.");
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
     }
+    
 }

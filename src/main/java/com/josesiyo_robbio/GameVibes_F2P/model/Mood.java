@@ -10,10 +10,12 @@ public class Mood
     private List<String> categories;
 
 
-    // Getters and Setters
+    // GETTERS
     public String getName()             { return name;          }
     public List<String> getCategories() { return categories;    }
 
+
+    //SETTERS
     public void setName(String name)                    { this.name = name;                 }
     public void setCategories(List<String> categories)  { this.categories = categories;     }
 }

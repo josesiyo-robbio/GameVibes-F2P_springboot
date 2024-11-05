@@ -14,13 +14,9 @@ public class GameRecommendationResponse
         this.games = games;
     }
 
-    public List<GameInfoRequest> getGames()
-    {
-        return games;
-    }
 
-    public void setGames(List<GameInfoRequest> games)
-    {
-        this.games = games;
-    }
+    //GETTERS AND SETTERS
+    public List<GameInfoRequest> getGames()             { return games;         }
+    public void setGames(List<GameInfoRequest> games)   { this.games = games;   }
+
 }

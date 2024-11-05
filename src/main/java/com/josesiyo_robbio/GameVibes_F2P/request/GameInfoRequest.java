@@ -28,4 +28,5 @@ public class GameInfoRequest
     public void setTitle(String title)                          { this.title = title;                           }
     public void setShortDescription(String shortDescription)    { this.shortDescription = shortDescription;     }
     public void setGenre(String genre)                          { this.genre = genre;                           }
+
 }

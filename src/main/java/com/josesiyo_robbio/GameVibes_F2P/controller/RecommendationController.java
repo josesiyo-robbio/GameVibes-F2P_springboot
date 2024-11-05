@@ -22,12 +22,12 @@ import java.util.List;
 @RequestMapping("/api/recommendations")
 public class RecommendationController
 {
-
     @Autowired
     private GameRecommendationService gameRecommendationService;
 
     @Autowired
     private RestTemplate restTemplate;
+
 
     @PostMapping
     public ResponseEntity<GameRecommendationResponse> getGameRecommendations(@RequestBody RecommendationRequest recommendationRequest)
@@ -51,7 +51,8 @@ public class RecommendationController
         }
 
         List<GameInfoRequest> gameInfoRequestList = new ArrayList<>();
-        for (JsonElement gameElement : gamesArray) {
+        for (JsonElement gameElement : gamesArray)
+        {
             JsonObject game = gameElement.getAsJsonObject();
             String title = game.get("title").getAsString();
             String shortDescription = game.get("short_description").getAsString();
@@ -64,4 +65,5 @@ public class RecommendationController
         GameRecommendationResponse gameRecommendationResponse = new GameRecommendationResponse(gameInfoRequestList);
         return ResponseEntity.ok(gameRecommendationResponse);
     }
+
 }
