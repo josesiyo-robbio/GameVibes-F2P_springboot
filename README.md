@@ -1,4 +1,4 @@
-# GameVibes F2P - Game Recommendation API
+# GameVibes F2P - Game Recommendation
 
 ## Overview
 GameVibes F2P is a REST API that provides personalized free-to-play game recommendations based on the user's mood and time of day. It integrates with the FreeToGame API to suggest games that match the user's current emotional state and schedule.
